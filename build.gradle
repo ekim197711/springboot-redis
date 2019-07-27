@@ -1,0 +1,31 @@
+plugins {
+    id 'org.springframework.boot' version '2.1.6.RELEASE'
+    id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.codeinvestigator'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '12'
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    //  Redis
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+    implementation 'redis.clients:jedis:2.9.0'
+    //  Junit5
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
+
+
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    //  Lombok
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
